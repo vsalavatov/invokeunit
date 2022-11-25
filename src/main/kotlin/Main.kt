@@ -1,7 +1,18 @@
-fun main(args: Array<String>) {
-    println("Hello World!")
+import dev.salavatov.invokeunit.InvokeUnit
+import dev.salavatov.invokeunit.U
+import dev.salavatov.invokeunit.impl.Brainfuck
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+fun main() {
+     !BrainfuckEx.helloWorld
+}
+
+object BrainfuckEx {
+    operator fun U.invoke(): Brainfuck = InvokeUnit.brainfuck
+
+    // ++++++++[>++++[>++>+++>+++>+<<<<-]>+>->+>>+[<]<-]>>.>>---.+++++++..+++.>.<<-.>.+++.------.--------.>+.>++.
+    val helloWorld =
+        U()()()()()()()()()(U()(U,U)()()()()(U()(U,U)()()(U,U)()()()(U,U)()()()(U,U)()(U,U,U)(U,U,U)(U,U,U)(U,U,U)(U)
+        )(U,U)()(U,U)(U)(U,U)()(U,U)(U,U)()(U()(U,U,U))(U,U,U)(U))(U,U)(U,U)(U,U,U,U)(U,U)(U,U)(U)(U)(U)(U,U,U,U)()()(
+        )()()()()(U,U,U,U)(U,U,U,U)()()()(U,U,U,U)(U,U)(U,U,U,U)(U,U,U)(U,U,U)(U)(U,U,U,U)(U,U)(U,U,U,U)()()()(U,U,U,U
+        )(U)(U)(U)(U)(U)(U)(U,U,U,U)(U)(U)(U)(U)(U)(U)(U)(U)(U,U,U,U)(U,U)()(U,U,U,U)(U,U)()()(U,U,U,U)
 }
